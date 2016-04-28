@@ -53,7 +53,7 @@
             this.txtText.Name = "txtText";
             this.txtText.Size = new System.Drawing.Size(322, 134);
             this.txtText.TabIndex = 1;
-            this.txtText.Text = "Edit the Expression & Text";
+            this.txtText.Text = "Edit the Expression & Text to see matches.";
             // 
             // label2
             // 
@@ -87,7 +87,7 @@
             this.txtPattern.Name = "txtPattern";
             this.txtPattern.Size = new System.Drawing.Size(322, 20);
             this.txtPattern.TabIndex = 5;
-            this.txtPattern.Text = "/([A-W])\\w+/g";
+            this.txtPattern.Text = "[A-W]";
             // 
             // btnFind
             // 
@@ -97,6 +97,7 @@
             this.btnFind.TabIndex = 6;
             this.btnFind.Text = "Find Pattern in Text";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // Form1
             // 
@@ -110,9 +111,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtText);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Matcher";
             this.ResumeLayout(false);
             this.PerformLayout();
 

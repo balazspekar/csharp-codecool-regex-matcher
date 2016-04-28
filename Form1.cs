@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,9 +18,21 @@ namespace Matcher
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnFind_Click(object sender, EventArgs e)
         {
+            lstBox.Items.Clear();
+            var pattern = txtPattern.Text;
+            Regex regex = new Regex(pattern);
+            MatchCollection mc = regex.Matches(txtText.ToString());
 
+            foreach (var match in mc)
+            {
+                lstBox.Items.Add(match);
+            }
+            
+            
+
+            
         }
     }
 }
